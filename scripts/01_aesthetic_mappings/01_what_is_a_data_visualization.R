@@ -1,3 +1,4 @@
+
 library(tidyverse)
 
 world_bank_countries <- read_csv("data/world_bank_countries.csv")
@@ -129,3 +130,4 @@ world_bank_countries %>%
     axis.text = element_blank(),
     axis.ticks = element_blank()
   )
+

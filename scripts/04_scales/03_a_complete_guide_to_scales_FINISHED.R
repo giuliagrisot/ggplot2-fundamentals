@@ -23,6 +23,9 @@ world_bank_countries %>%
                    labels = function(x) paste("#", x),
                    expand = expansion(mult = .5))
 
+# we can setup scipen to avoid scientific notation, and to show commas for numbers with more than 3 digits
+
+options(scipen = 999)
 
 # Using the app for a scatterplot -----------------------------------------
 world_bank_countries %>% 
@@ -33,6 +36,6 @@ world_bank_countries %>%
   geom_point() +
   scale_x_continuous(breaks = seq(0, 190000, 50000)) +
   scale_y_continuous(breaks = seq(0, 40, 2),
-                     limits = c(0, 80))
-  
+                     limits = c(0, 80)) +
+  scale_size_continuous(labels = scales::comma) # this is the function that will be used to format the labels
 
